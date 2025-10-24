@@ -15,7 +15,7 @@ def load_movie_list(filepath='input/wiki_movie_plots.json'):
 
 def classify(movies, origin='British'):
     """Filtre les films selon leur origine."""
-    return [movie for movie in movies if movie.get('Origin/Ethnicity') == origin]
+    return [movie for movie in movies if movie.get("Origin", {}).get("Ethnicity", "")]
 
 
 # TODO: Save your python object in a new JSON file located in the `output`folder.#  
